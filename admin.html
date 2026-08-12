@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>REVIZA | Admin Broadcast</title>
+    <meta name="description" content="Dashboard admin REVIZA untuk daftar user dan broadcast email." />
+    <!-- GANTI href di bawah ini jika ingin memakai favicon/logo lain untuk tab browser. -->
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body data-page="admin">
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="index.html"><span class="brand-mark">R</span><span>REVIZA</span></a>
+        <nav class="desktop-nav" aria-label="Navigasi utama"><a href="index.html">Beranda</a><a href="produk.html">Produk</a><a href="pay.html">Pembayaran</a><a href="index.html#profiledev">Developer Profile</a><button type="button" data-info-modal>FAQ</button><button type="button" data-info-modal>S&amp;K</button></nav>
+        <div class="header-actions"><div id="guestAuth"><button class="button button-small" id="loginButton" type="button">Login dengan Google</button></div><div id="signedInAuth" class="signed-in" hidden><button class="user-chip" id="profileButton" type="button"><img class="user-avatar" src="assets/favicon.svg" alt="Foto profil pengguna" /><span id="userName">Pengguna</span></button><button class="text-button" id="logoutButton" type="button">Logout</button></div><button class="menu-toggle" id="menuToggle" type="button" aria-label="Buka menu" aria-expanded="false"><span></span><span></span></button></div>
+      </header>
+      <aside class="drawer" id="siteDrawer" aria-hidden="true"><div class="drawer-backdrop" id="drawerBackdrop"></div><div class="drawer-panel"><button class="icon-button drawer-close" id="drawerClose" type="button" aria-label="Tutup menu">×</button><p class="eyebrow">Menu REVIZA</p><nav class="drawer-nav"><a class="drawer-link" href="index.html">Beranda</a><a class="drawer-link" href="produk.html">Produk</a><a class="drawer-link" href="pay.html">Pembayaran</a><a class="drawer-link" href="index.html#profiledev">Developer Profile</a><button class="drawer-link" type="button" data-info-modal>FAQ</button><button class="drawer-link" type="button" data-info-modal>Syarat &amp; Ketentuan</button></nav></div></aside>
+      <div class="ticker"><span>REVIZA / ADMIN CONTROL / FIRESTORE USERS / EMAILJS BROADCAST /</span><span>REVIZA / ADMIN CONTROL / FIRESTORE USERS / EMAILJS BROADCAST /</span></div>
+      <main class="container admin-page">
+        <section class="page-intro"><div><p class="eyebrow">Private control room</p><h1>Broadcast<br /><em>with intent.</em></h1></div><p>Panel developer untuk melihat user yang tersimpan di Firestore dan mengirim pengumuman melalui EmailJS.</p></section>
+        <section id="adminGate" class="gate-card"><span class="gate-icon">R</span><div><h2>Akses admin diperlukan.</h2><p>Login memakai Google dengan email yang sudah ditulis di <code>js/config.js</code> pada bagian <code>adminEmails</code>.</p><button class="button" id="loginButtonSecondary" type="button" onclick="document.querySelector('#loginButton')?.click()">Login dengan Google</button></div></section>
+        <section id="adminPanel" class="admin-grid" hidden>
+          <article class="admin-card"><div class="admin-card-heading"><div><p class="eyebrow">Audience</p><h2>Registered users</h2></div><button class="button button-ghost button-small" id="refreshUsers" type="button">Refresh</button></div><div class="audience-meta"><strong id="userCount">0 user</strong><span>collection: users</span></div><div id="userList" class="user-list"></div></article>
+          <article class="admin-card"><p class="eyebrow">EmailJS broadcast</p><h2>Kirim pengumuman.</h2><p class="admin-help">Gunakan untuk update, maintenance, info harga, atau diskon. Satu template EmailJS akan dikirim ke setiap email yang terdaftar.</p><form id="broadcastForm" class="form-stack"><label>Subjek<input id="broadcastSubject" type="text" placeholder="Contoh: Update produk REVIZA" required /></label><label>Isi Pesan<textarea id="broadcastMessage" rows="8" placeholder="Tulis pengumuman Anda..." required></textarea></label><button class="button" id="broadcastButton" type="submit">Kirim broadcast</button></form></article>
+        </section>
+        <div class="security-note"><strong>Catatan keamanan.</strong><span>UI admin bukan pengganti Firestore Security Rules. Batasi read collection <code>users</code> hanya untuk email admin dan jangan menaruh private key di folder GitHub Pages.</span></div>
+      </main>
+      <footer class="footer container"><strong>REVIZA</strong><span>Admin / Developer surface · 2024—2026</span><a href="index.html">Kembali ke site</a></footer>
+    </div>
+    <div class="modal" id="infoModal" aria-hidden="true" role="dialog" aria-modal="true"><div class="modal-card compact-modal"><button class="icon-button modal-close" type="button" data-close-modal aria-label="Tutup">×</button><p class="eyebrow">REVIZA INFO</p><h2>Mohon maaf.</h2><p>Mohon maaf, fitur ini sedang dalam tahap pengembangan.</p><button class="button" type="button" data-close-modal>Tutup</button></div></div>
+    <div class="modal" id="profileModal" aria-hidden="true" role="dialog" aria-modal="true"><div class="modal-card"><button class="icon-button modal-close" type="button" data-close-modal aria-label="Tutup">×</button><p class="eyebrow">USER PROFILE</p><h2>Atur profil Anda.</h2><p class="modal-intro">Nama dan foto profil disimpan ke collection <code>users</code> di Firestore.</p><form id="profileForm" class="form-stack"><div class="profile-preview"><img id="profilePreview" class="user-avatar large" src="assets/favicon.svg" alt="Preview foto profil" /><div><strong id="userEmail">Email pengguna</strong><small>Google account</small></div></div><label>Nama Lengkap<input id="profileName" type="text" autocomplete="name" required /></label><label>URL Foto Profil<input id="profilePhotoUrl" type="url" placeholder="https://..." /></label><label>Atau upload foto<input id="profilePhotoFile" type="file" accept="image/*" /></label><button class="button" id="profileSave" type="submit">Simpan profil</button></form></div></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

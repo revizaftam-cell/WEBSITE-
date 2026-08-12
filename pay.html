@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>REVIZA | Pembayaran</title>
+    <meta name="description" content="Metode pembayaran REVIZA melalui QRIS dan DANA." />
+    <!-- GANTI href di bawah ini jika ingin memakai favicon/logo lain untuk tab browser. -->
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body data-page="pay">
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="index.html"><span class="brand-mark">R</span><span>REVIZA</span></a>
+        <nav class="desktop-nav" aria-label="Navigasi utama"><a href="index.html">Beranda</a><a href="produk.html">Produk</a><a href="pay.html" aria-current="page">Pembayaran</a><a href="index.html#profiledev">Developer Profile</a><button type="button" data-info-modal>FAQ</button><button type="button" data-info-modal>S&amp;K</button></nav>
+        <div class="header-actions"><div id="guestAuth"><button class="button button-small" id="loginButton" type="button">Login dengan Google</button></div><div id="signedInAuth" class="signed-in" hidden><button class="user-chip" id="profileButton" type="button"><img class="user-avatar" src="assets/favicon.svg" alt="Foto profil pengguna" /><span id="userName">Pengguna</span></button><button class="text-button" id="logoutButton" type="button">Logout</button></div><button class="menu-toggle" id="menuToggle" type="button" aria-label="Buka menu" aria-expanded="false"><span></span><span></span></button></div>
+      </header>
+      <aside class="drawer" id="siteDrawer" aria-hidden="true"><div class="drawer-backdrop" id="drawerBackdrop"></div><div class="drawer-panel"><button class="icon-button drawer-close" id="drawerClose" type="button" aria-label="Tutup menu">×</button><p class="eyebrow">Menu REVIZA</p><nav class="drawer-nav"><a class="drawer-link" href="index.html">Beranda</a><a class="drawer-link" href="produk.html">Produk</a><a class="drawer-link" href="pay.html">Pembayaran</a><a class="drawer-link" href="index.html#profiledev">Developer Profile</a><button class="drawer-link" type="button" data-info-modal>FAQ</button><button class="drawer-link" type="button" data-info-modal>Syarat &amp; Ketentuan</button><a class="drawer-link" href="admin.html">Admin / Dev</a></nav></div></aside>
+      <div class="ticker"><span>REVIZA / SECURE PAYMENT / QRIS + DANA / FAST RESPONSE /</span><span>REVIZA / SECURE PAYMENT / QRIS + DANA / FAST RESPONSE /</span></div>
+      <main class="container pay-page">
+        <section class="page-intro"><div><p class="eyebrow">Checkout guide</p><h1>Pay with<br /><em>confidence.</em></h1></div><p>Pilih metode yang nyaman. Setelah pembayaran, kirim screenshot bukti bayar ke WhatsApp admin bersama nama produk.</p></section>
+        <section class="pay-card">
+          <div class="payment-heading"><h2>QRIS</h2><span class="pill">UNIVERSAL</span></div>
+          <!-- GANTI src gambar QRIS di bawah ini dengan URL atau path file QRIS Anda. -->
+          <div class="qris-box"><img src="https://u.pone.rs/wxobgljk.jpg" alt="QRIS REVIZA untuk pembayaran" /><strong>REVIZA</strong><small>Muhammad Reviza Floryan</small></div>
+          <p class="hint">Scan dengan kamera atau aplikasi e-wallet / mobile banking.</p>
+          <div class="apps"><span>GoPay</span><span>OVO</span><span>DANA</span><span>ShopeePay</span><span>LinkAja</span><span>BCA</span><span>BRI</span><span>Mandiri</span><span>BNI</span></div>
+          <hr class="divider" />
+          <div class="payment-heading"><h2>Transfer manual</h2><span class="pill">DANA</span></div>
+          <div class="transfer-box"><span class="dana-label">DANA</span><strong id="danaNumber">08978595858</strong><small>A/N: Muhammad Reviza Floryan</small><button class="button copy-button" id="copyDana" type="button">Copy nomor DANA</button></div>
+          <hr class="divider" />
+          <p class="eyebrow">How it works</p>
+          <div class="steps"><div><span>01</span><p>Pilih produk di halaman <strong>Produk</strong>, lalu catat nama dan harganya.</p></div><div><span>02</span><p>Bayar via <strong>QRIS</strong> atau transfer <strong>DANA</strong>.</p></div><div><span>03</span><p>Kirim screenshot bukti bayar ke WhatsApp admin beserta nama produk.</p></div><div><span>04</span><p>Admin memproses dan mengirim produk sesuai ketentuan.</p></div></div>
+          <div class="notice">Pastikan nama penerima dan nominal sudah benar sebelum mengirim pembayaran.</div>
+        </section>
+      </main>
+      <footer class="footer container"><strong>REVIZA</strong><span>Pembayaran aman &amp; terpercaya · 2024—2026</span><a href="admin.html">Admin / Dev</a></footer>
+    </div>
+    <div class="modal" id="infoModal" aria-hidden="true" role="dialog" aria-modal="true"><div class="modal-card compact-modal"><button class="icon-button modal-close" type="button" data-close-modal aria-label="Tutup">×</button><p class="eyebrow">REVIZA INFO</p><h2>Mohon maaf.</h2><p>Mohon maaf, fitur ini sedang dalam tahap pengembangan.</p><button class="button" type="button" data-close-modal>Tutup</button></div></div>
+    <div class="modal" id="profileModal" aria-hidden="true" role="dialog" aria-modal="true"><div class="modal-card"><button class="icon-button modal-close" type="button" data-close-modal aria-label="Tutup">×</button><p class="eyebrow">USER PROFILE</p><h2>Atur profil Anda.</h2><p class="modal-intro">Nama dan foto profil disimpan ke collection <code>users</code> di Firestore.</p><form id="profileForm" class="form-stack"><div class="profile-preview"><img id="profilePreview" class="user-avatar large" src="assets/favicon.svg" alt="Preview foto profil" /><div><strong id="userEmail">Email pengguna</strong><small>Google account</small></div></div><label>Nama Lengkap<input id="profileName" type="text" autocomplete="name" required /></label><label>URL Foto Profil<input id="profilePhotoUrl" type="url" placeholder="https://..." /></label><label>Atau upload foto<input id="profilePhotoFile" type="file" accept="image/*" /></label><button class="button" id="profileSave" type="submit">Simpan profil</button></form></div></div>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

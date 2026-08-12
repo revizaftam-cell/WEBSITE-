@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>REVIZA | Creator Digital Goods</title>
+    <meta name="description" content="Website resmi REVIZA untuk showcase karya, profil developer, produk digital, dan pembayaran." />
+    <meta name="theme-color" content="#080808" />
+    <!-- GANTI href di bawah ini jika ingin memakai favicon/logo lain untuk tab browser. -->
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="module" src="js/app.js"></script>
+  </head>
+  <body data-page="home">
+    <div class="ambient-grid" aria-hidden="true"></div>
+    <div class="site-shell">
+      <header class="site-header">
+        <a class="brand" href="index.html"><span class="brand-mark">R</span><span>REVIZA</span></a>
+        <nav class="desktop-nav" aria-label="Navigasi utama">
+          <a href="index.html" aria-current="page">Beranda</a>
+          <a href="produk.html">Produk</a>
+          <a href="pay.html">Pembayaran</a>
+          <a href="#profiledev">Developer Profile</a>
+          <button type="button" data-info-modal>FAQ</button>
+          <button type="button" data-info-modal>S&amp;K</button>
+        </nav>
+        <div class="header-actions">
+          <div id="guestAuth"><button class="button button-small" id="loginButton" type="button">Login dengan Google</button></div>
+          <div id="signedInAuth" class="signed-in" hidden>
+            <button class="user-chip" id="profileButton" type="button">
+              <img class="user-avatar" src="assets/favicon.svg" alt="Foto profil pengguna" />
+              <span id="userName">Pengguna</span>
+            </button>
+            <button class="text-button" id="logoutButton" type="button">Logout</button>
+          </div>
+          <button class="menu-toggle" id="menuToggle" type="button" aria-label="Buka menu" aria-expanded="false">
+            <span></span><span></span>
+          </button>
+        </div>
+      </header>
+
+      <aside class="drawer" id="siteDrawer" aria-hidden="true">
+        <div class="drawer-backdrop" id="drawerBackdrop"></div>
+        <div class="drawer-panel">
+          <button class="icon-button drawer-close" id="drawerClose" type="button" aria-label="Tutup menu">×</button>
+          <p class="eyebrow">Menu REVIZA</p>
+          <nav class="drawer-nav" aria-label="Menu mobile">
+            <a class="drawer-link" href="index.html">Beranda</a>
+            <a class="drawer-link" href="produk.html">Produk</a>
+            <a class="drawer-link" href="pay.html">Pembayaran</a>
+            <a class="drawer-link" href="#profiledev">Developer Profile</a>
+            <button class="drawer-link" type="button" data-info-modal>FAQ</button>
+            <button class="drawer-link" type="button" data-info-modal>Syarat &amp; Ketentuan</button>
+            <a class="drawer-link" href="admin.html">Admin / Dev</a>
+          </nav>
+        </div>
+      </aside>
+
+      <div class="ticker"><span>REVIZA / DIGITAL GOODS / FAST RESPONSE / CREATIVE ASSETS / TRUSTED SINCE 2024 /</span><span>REVIZA / DIGITAL GOODS / FAST RESPONSE / CREATIVE ASSETS / TRUSTED SINCE 2024 /</span></div>
+
+      <main>
+        <section class="hero container">
+          <div class="hero-copy">
+            <p class="eyebrow">REVIZA site · 2024—2026</p>
+            <h1>Make it <em>move.</em><br />Make it yours.</h1>
+            <p class="lede">Temukan produk digital, preset Alight Motion, layanan premium, dan karya visual REVIZA dalam satu ruang yang dibuat untuk bergerak.</p>
+            <div class="hero-actions">
+              <a class="button" href="produk.html">Lihat katalog</a>
+              <a class="button button-ghost" href="#profiledev">Kenal developer</a>
+            </div>
+          </div>
+          <div class="hero-orb" aria-label="Logo REVIZA">
+            <div class="orb-ring orb-ring-one"></div>
+            <div class="orb-ring orb-ring-two"></div>
+            <div class="orb-core"><span>REVIZA</span><small>CREATE / REPEAT</small></div>
+            <div class="hero-stamp">DIGITAL<br />MOTION<br />GOODS</div>
+          </div>
+        </section>
+
+        <section class="section container">
+          <div class="section-heading">
+            <div><p class="eyebrow">Showcase</p><h2>See it in motion.</h2></div>
+            <p>Cuplikan karya dan referensi visual dari dunia REVIZA.</p>
+          </div>
+          <div class="video-grid">
+            <!-- GANTI src video di bawah ini dengan video Anda sendiri bila diperlukan. -->
+            <video class="showcase-video" autoplay muted loop playsinline preload="metadata">
+              <source src="https://u.pone.rs/oiekuerd.mp4" type="video/mp4" />
+            </video>
+            <div class="showcase-note">
+              <span class="number-label">01 / VISUAL STUDY</span>
+              <h3>Built for the scroll.</h3>
+              <p>Gerak, ritme, dan detail yang dirancang untuk berhenti di layar audiens.</p>
+              <a class="arrow-link" href="produk.html">Explore the catalogue</a>
+            </div>
+          </div>
+        </section>
+
+        <section class="section container">
+          <div class="section-heading">
+            <div><p class="eyebrow">Selected archive</p><h2>Made with feeling.</h2></div>
+            <p>Inspirasi visual dari karakter, warna, dan motion yang membentuk identitas REVIZA.</p>
+          </div>
+          <div class="archive-grid">
+            <article class="visual-card visual-card-large">
+              <!-- GANTI URL gambar ini jika ingin memakai aset sendiri. -->
+              <img src="https://cdn.nekohime.site/file/rd82ed5t.jpg" alt="Ai Hoshino dengan nuansa biru" />
+              <div class="visual-caption"><span>01 — Character study</span><strong>Ai Hoshino</strong></div>
+            </article>
+            <article class="visual-card">
+              <img src="https://cdn.nekohime.site/file/ewl5i1yr.jpg" alt="Oshi no Ko dengan nuansa merah" />
+              <div class="visual-caption"><span>02 — Visual reference</span><strong>Oshi no Ko</strong></div>
+            </article>
+            <article class="archive-copy">
+              <p class="eyebrow">The archive</p>
+              <h3>Personal work, public energy.</h3>
+              <p>Dikembangkan oleh REVIZA di Aceh. Setiap preset dan visual dibuat sambil terus belajar, bereksperimen, dan mencari cara baru agar satu frame terasa hidup.</p>
+              <a class="arrow-link" href="https://www.tiktok.com/@reviza4ever" target="_blank" rel="noopener">Follow TikTok</a>
+            </article>
+          </div>
+        </section>
+
+        <section class="section container profiledev-section" id="profiledev">
+          <div class="section-heading">
+            <div><p class="eyebrow">Profiledev</p><h2>Developer Profile.</h2></div>
+            <p>Ruang untuk mengenal creator di balik preset, produk, dan eksperimen visual REVIZA.</p>
+          </div>
+          <div class="dev-profile-grid">
+            <article class="dev-card">
+              <div class="dev-monogram">R</div>
+              <p class="eyebrow">Muhammad Reviza Floryan</p>
+              <h3>Creator preset &amp; digital goods.</h3>
+              <p>Lahir 5 September 2007 dan terus membangun karya berbasis HTML, CSS, JavaScript, serta Alight Motion.</p>
+              <div class="dev-facts"><span>ACEH, ID</span><span>EST. 2024</span><span>ALIGHT MOTION</span></div>
+            </article>
+            <article class="widget-card">
+              <!--
+                AREA EMBED WIDGET TIKTOK
+                Tempel kode widget otomatis dari Elfsight / EmbedSocial di dalam div ini.
+                Pilih widget yang menampilkan video terbaru dan rekap video 30 hari terakhir.
+                Contoh: ganti komentar ini dengan <div class="elfsight-app-..."></div>
+                lalu tempel script widget dari provider pilihan Anda sebelum </body>.
+              -->
+              <div class="widget-placeholder">
+                <span class="placeholder-badge">TIKTOK WIDGET SLOT</span>
+                <strong>Video terbaru + recap 30 hari</strong>
+                <p>Tempel kode widget Elfsight atau EmbedSocial di area ini.</p>
+                <span class="placeholder-code">&lt;!-- PASTE TIKTOK WIDGET HERE --&gt;</span>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer container">
+        <strong>REVIZA</strong>
+        <span>Creator preset Alight Motion · revizayowa.biz.id · 2024—2026</span>
+        <a href="admin.html">Admin / Dev</a>
+      </footer>
+    </div>
+
+    <div class="modal" id="infoModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-card compact-modal">
+        <button class="icon-button modal-close" type="button" data-close-modal aria-label="Tutup">×</button>
+        <p class="eyebrow">REVIZA INFO</p>
+        <h2>Mohon maaf.</h2>
+        <p>Mohon maaf, fitur ini sedang dalam tahap pengembangan.</p>
+        <button class="button" type="button" data-close-modal>Tutup</button>
+      </div>
+    </div>
+
+    <div class="modal" id="profileModal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-card">
+        <button class="icon-button modal-close" type="button" data-close-modal aria-label="Tutup">×</button>
+        <p class="eyebrow">USER PROFILE</p>
+        <h2>Atur profil Anda.</h2>
+        <p class="modal-intro">Nama dan foto profil disimpan ke collection <code>users</code> di Firestore.</p>
+        <form id="profileForm" class="form-stack">
+          <div class="profile-preview"><img id="profilePreview" class="user-avatar large" src="assets/favicon.svg" alt="Preview foto profil" /><div><strong id="userEmail">Email pengguna</strong><small>Google account</small></div></div>
+          <label>Nama Lengkap<input id="profileName" type="text" autocomplete="name" required /></label>
+          <label>URL Foto Profil<input id="profilePhotoUrl" type="url" placeholder="https://..." /></label>
+          <label>Atau upload foto<input id="profilePhotoFile" type="file" accept="image/*" /></label>
+          <button class="button" id="profileSave" type="submit">Simpan profil</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
