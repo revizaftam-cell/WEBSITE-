@@ -11,20 +11,16 @@ export const REVIZA_CONFIG = {
     Authentication -> Sign-in method -> aktifkan Google.
   */
   firebase: {
-    apiKey: "GANTI_DENGAN_FIREBASE_API_KEY",
-    authDomain: "GANTI_DENGAN_PROJECT_ID.firebaseapp.com",
-    projectId: "GANTI_DENGAN_FIREBASE_PROJECT_ID",
-    storageBucket: "GANTI_DENGAN_PROJECT_ID.firebasestorage.app",
-    messagingSenderId: "GANTI_DENGAN_MESSAGING_SENDER_ID",
-    appId: "GANTI_DENGAN_FIREBASE_APP_ID",
+    apiKey: "AIzaSyD0u2SZzorktYoDuRIHuN5QUY3GwH9lxbI",
+    authDomain: "website-3b021.firebaseapp.com",
+    projectId: "website-3b021",
+    storageBucket: "website-3b021.firebasestorage.app",
+    messagingSenderId: "41641431123",
+    appId: "1:41641431123:web:2f375ccc5b9924e4fa76a6",
   },
 
   /*
-    EMAILJS CONFIG
-    EmailJS Dashboard -> Account -> Public Key.
-    Service ID dan Template ID dapat ditemukan pada Email Services dan Email Templates.
-    Welcome template dipakai ketika dokumen user baru pertama kali dibuat.
-    Broadcast template dipakai oleh halaman admin untuk setiap email penerima.
+    EMAILJS CONFIG (Isi nanti kalau mau pakai EmailJS)
   */
   emailjs: {
     publicKey: "GANTI_DENGAN_EMAILJS_PUBLIC_KEY",
@@ -35,8 +31,7 @@ export const REVIZA_CONFIG = {
 
   /*
     DAFTAR ADMIN / DEV
-    Ganti dengan email Google developer. UI admin hanya dibuka untuk email di daftar ini.
-    Tetap wajib mengunci collection users dengan Firestore Security Rules.
+    Ganti dengan email Google kamu yang dipakai login nanti.
   */
   adminEmails: ["email-admin-anda@example.com"],
 };
